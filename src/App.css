@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'Josefin Sans', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+}
+
+:root{
+
+  /* Light Theme */
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+  --gradient-start: hsl(192, 100%, 67%);
+  --gradient-end: hsl(280, 87%, 65%);
+  --active: hsl(220, 98%, 61%);
+
+  /*Dark Theme */
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+  --Very-Dark-Grayish-Blue-2: hsl(237, 14%, 26%);
+}
+
+body,html, *, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin sans', sans-serif;
+}
+
+body,input[type="text"]{
+  font-family: 'Josefin sans', sans-serif;
+  font-size: 18px;
+}
+
+li{
+  list-style-type: none;
+}
+
+input{
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.app-wrapper{
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+
+.app-wrapper.light-theme{
+  background-image: url("./images/bg-desktop-light.jpg");
+  background-size: 100% 40%;
+  background-color: var(--Very-Light-Gray);
+  
+}
+
+.app-wrapper.dark-theme{
+  background-image: url("./images/bg-desktop-dark.jpg");
+  background-size: 100% 40%;
+  background-color: hsl(235, 21%, 11%);
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 36rem;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* HEADER */
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.header h1{
+  color: #fff;
+  font-weight: 700;
+}
+
+button{
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* TODO FORM */
+
+.form-wrapper{
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  padding: 1.9rem;
+  margin-top: 2rem;
+  /* justify-content: stretch; */
+  align-items: center;
+  gap: 1.3rem;
+  background-color: var(--Very-Light-Gray);
+  border-radius: .3rem;
+  box-shadow: rgba(51, 52, 53, 0.4) 0px 10px 24px;
+
+
+}
+
+.app-wrapper.dark-theme .form-wrapper{
+  background-color: var(--Very-Dark-Desaturated-Blue);
+}
+
+.side-checkbox{
+height: 1.3rem;
+width: 1.3rem;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+border: .2px solid var(--Light-Grayish-Blue);
+background: var(--Very-Light-Gray);
+cursor: pointer;
+}
+
+
+.checkbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+  background: var(--Very-Light-Gray);
+}
+
+
+.app-wrapper.dark-theme .side-checkbox{
+  background: var(--Very-Dark-Desaturated-Blue);
+  border:.4px solid var(--Very-Dark-Grayish-Blue);
+}
+
+.app-wrapper.dark-theme .checkbox{
+  background: var(--Very-Dark-Desaturated-Blue);
+}
+
+.form-wrapper form{
+  width: 100%;
+}
+
+.form-wrapper form .todo-input{
+  width: 100%;
+}
+
+
+
+
+
+/* TODOLIST */
+
+.todo-list-section{
+  background-color: var(--Very-Light-Gray);
+  box-shadow: rgba(116, 118, 119, 0.2) 0px 5px 15px;
+  margin-top: 1.3rem;
+  border-radius: .3rem;
+}
+
+.app-wrapper.dark-theme .todo-list-section{
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  box-shadow: rgba(37, 35, 35, 0.61) 0px 5px 25px;
+}
+
+
+.todo-list-section .info-text{
+  padding: 2rem;
+}
+
+.todo-list li{
+  display: flex;
+  padding: 1.2rem 1.9rem;
+  border-bottom: 0.1rem solid var(--Very-Light-Grayish-Blue);
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.todo-list li .spacing{
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.app-wrapper.dark-theme .todo-list li{
+  border-bottom:  .1rem solid var(--Very-Dark-Grayish-Blue);
+  color: rgba(255, 255, 255, 0.74);
+  
+}
+
+
+.todo-list li input[type="checkbox"], .todo-list li label{
+  display: none;
+}
+
+.todo-list li.completed .checkbox{
+width: 100%;
+height: 100%;
+background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-end));
+}
+
+
+.todo-list li p{
+  margin-left: 1rem;
+  color: var(--Very-Dark-Blue);
+}
+
+.app-wrapper.dark-theme .todo-list li p{
+  color: var(--Very-Light-Gray);
+}
+
+
+.todo-list li.completed p{
+  text-decoration: line-through;
+  opacity: .4;
+}
+
+li .cancel {
+  display: flex;
+  opacity: 0;
+  cursor: pointer;
+}
+
+li:hover .cancel{
+  opacity: 1;
+}
+
+.todo-filter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.6rem;
+}
+
+.app-wrapper.dark-theme .todo-filter{
+  background: var(--Very-Dark-Desaturated-Blue);
+}
+
+.control-btn {
+  display: flex;
+  gap: 1rem;
+  
+}
+
+.app-wrapper.dark-theme .control-btn button,
+.app-wrapper.dark-theme .item-left{
+  color: var(--Very-Light-Gray);
+}
+
+.control-btn button{
+  font-size: 1rem;
+}
+
+button.colorText, .app-wrapper.dark-theme button.colorText{
+  color: var(--active);
+  font-weight: 700;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  font-size: 1rem;
+  color: var(--Dark-Grayish-Blue);
+}
+
+.me{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.control-for-mobile{
+  display: none;
+}
+
+@media screen and (max-width: 750px){
+  .app-wrapper{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .me{
+    display: inline;
+    line-height: 1.6rem;
+  }
+  .me a{
+    margin: 0;
+    padding: 0;
+  }
+.control-btn.control-for-desktop{
+  display: none;
+}
+  .control-btn.control-for-mobile{
+    
+    display: flex;
+    margin-top: 2rem;
+    height: 3rem;
+    background-color: var(--Very-Light-Gray);
+    box-shadow: rgba(116, 118, 119, 0.2) 0px 5px 15px;
+    border-radius: .3rem;
+  }
+
+  .control-btn{
+    height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .control-btn .group{
+    
+  }
+}
