@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHUb]()
+- Solution URL: [GitHUb](https://github.com/S-Devoe/todo-app-1.git)
 - Live Site URL: [Netlify]()
 
 

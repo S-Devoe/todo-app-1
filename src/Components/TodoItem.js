@@ -14,25 +14,30 @@ function TodoItem({ todos, setTodos, showTodo, setShowTodo, removeTodo}) {
     setShowTodo(todos);
   };
   
+  
 
   return (
     <>
       <DragDropContext
-      onDragEnd={() =>{console.log("Hello")}}
+      onDragEnd ={(param) =>{
+            const srcIndex = param.source.index;
+            const destIndex = param.destination.index;
+            todos.splice(destIndex, 0, todos.splice(srcIndex, 1)[0])}}
       >
-        <Droppable droppableId="droppable">
+        <Droppable droppableId="droppable-1">
           {(provided, snapshot) => (
             <ul
               className="todo-list"
               {...provided.droppableProps}
               ref={provided.innerRef}
+              key={todos.id}
               
             >
               {showTodo.map((todo, index) => {
                 const { id, content, completed } = todo;
 
                 return (
-                  <Draggable key={index} index={index} draggableId={`draggable-${id}`}>
+                  <Draggable key={id} index={index} draggableId={"id"+id}>
                     {(provided, snapshot) => (
                       <li key={index} className={completed ? "completed" : ""}  {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
                         <label htmlFor={`todoCheckBox-${id}`}></label>
