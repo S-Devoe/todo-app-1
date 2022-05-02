@@ -24,13 +24,13 @@ function TodoItem({ todos, setTodos, showTodo, setShowTodo, removeTodo}) {
             const destIndex = param.destination.index;
             todos.splice(destIndex, 0, todos.splice(srcIndex, 1)[0])}}
       >
-        <Droppable droppableId="droppable-1">
+        <Droppable droppableId="droppable-1" key={todos.id}>
           {(provided, snapshot) => (
             <ul
               className="todo-list"
               {...provided.droppableProps}
               ref={provided.innerRef}
-              key={todos.id}
+            
               
             >
               {showTodo.map((todo, index) => {
